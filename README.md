@@ -101,6 +101,6 @@ Este proyecto fue estructurado y desarrollado como entrega e implementación fin
 
 - GitHub: https://github.com/EmirPolito
 
-**Irving Molina**
+**Irving Mendez**
 
 - Github: https://github.com/1RV1N6-M3ND3Z
