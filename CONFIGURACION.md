@@ -83,7 +83,7 @@ Remplaza los campos marcados:
 $mail->Host = 'sandbox.smtp.mailtrap.io'; // O tu servidor SMTP preferido
 $mail->Username = 'TU_USUARIO_SMTP'; // REEMPLAZAR
 $mail->Password = 'TU_PASSWORD_SMTP'; // REEMPLAZAR
-$mail->Port = 2525;
+$mail->Port = 'TU_PORT'; // REEMPLAZAR
 ```
 
 ---
@@ -93,7 +93,7 @@ $mail->Port = 2525;
 Una vez que hayas completado los pasos anteriores, abre tu navegador web favorito y accede a la ruta local del proyecto. Suponiendo que usas XAMPP, sería algo así:
 
 ```text
-http://localhost/CRUD-HOTEL-GUEVARINI-Publico/
+http://localhost/CRUD-HOTEL-GUEVARINI-Publico/views/login.php
 ```
 
 ### 🔑 Cuentas Activas para Pruebas:
