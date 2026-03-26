@@ -1,0 +1,69 @@
+<?php
+session_start();
+require_once '../../php/conexion.php';
+
+// Control de Acceso: Solo Administradores
+if (!isset($_SESSION['usuario_id']) || $_SESSION['usuario_rol_id'] != 1) {
+    header("Location: ../../login.php");
+    exit();
+}
+
+// Obtener roles para el select
+$database = new Conexion();
+$db = $database->obtenerConexion();
+$stmt = $db->query("SELECT * FROM roles");
+$roles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Usuario - CRUD HOTEL</title>
+
+    <link rel="stylesheet" href="../../css/login.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">HOTEL</div>
+        <div class="nav-links">
+            <a href="../usuarios/usuarios.php">Volver a Usuarios</a>
+            <a href="../../php/auth/logout.php" class="btn btn-danger" style="padding: 5px 10px;">Cerrar Sesión</a>
+        </div>
+    </nav>
+
+    <div class="login-container" style="max-width: 550px;   margin: 15px auto;  border-top: 4px solid #1cc261;">
+        <a href="usuarios.php" class="btn-close-card" title="Cancelar">&times;</a>
+        <h2 style="margin-bottom: 25px;">Registrar <span style="color:#2ecc71;">Nuevo Usuario</span></h2>
+        <p style="margin-bottom: 20px; color: #666;">Después de registrar, se enviará un email de verificación al usuario para activar la cuenta.</p>
+
+        <form action="../../php/usuarios/guardar_usuario.php" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre_completo" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Contraseña temporal:</label>
+                <input type="text" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="rol">Rol del Usuario:</label>
+                <select id="rol" name="id_rol" required>
+                    <option value="">Seleccione un rol...</option>
+                    <?php foreach($roles as $rol): ?>
+                        <option value="<?php echo $rol['id_rol']; ?>"><?php echo $rol['nombre_rol']; ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-success" style="width: 100%; margin-top: 10px;">Guardar Usuario</button>
+        </form>
+    </div>
+</body>
+</html>
