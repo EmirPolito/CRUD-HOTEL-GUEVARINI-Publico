@@ -1,19 +1,22 @@
 <?php
-require_once 'c:/apache/htdocs/PROYECTO-FINAL/CRUD-HOTEL-COPIA/vendor/autoload.php';
+require_once 'tu-ruta/htdocs/CRUD-HOTEL-GUEVARINI-Publico/vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+
 $mail = new PHPMailer(true);
 try {
+    // Aqui va tu configuracion de SMTP
     $mail->isSMTP();
-    $mail->Host = 'sandbox.smtp.mailtrap.io';
+    $mail->Host = 'tu-host';
     $mail->SMTPAuth = true;
-    $mail->Username = '7e5afe727f22b9';
-    $mail->Password = '04c817ebd1c7b3';
-    $mail->SMTPSecure = 'tls';
-    $mail->Port = 2525;
-    $mail->SMTPDebug = 2; // Habilitar output de debug
+    $mail->Username = 'tu-usuario';
+    $mail->Password = 'tu-contraseña';
+    $mail->SMTPSecure = 'tu-seguridad';
+    $mail->Port = 'tu-puerto';
+    $mail->SMTPDebug = 2;
 
+    // Destinatarios
     $mail->setFrom('noreply@hotel.com', 'Hotel Test');
     $mail->addAddress('test@example.com', 'Test User');
     $mail->Subject = 'Test Verificacion';
@@ -21,7 +24,8 @@ try {
     $mail->Body = "Hola mundo";
     $mail->send();
     echo "EXITO: El correo se envio correctamente a Mailtrap.\n";
-} catch (Exception $e) {
+}
+catch (Exception $e) {
     echo "ERROR: {$mail->ErrorInfo}\n";
     echo $e->getMessage();
 }

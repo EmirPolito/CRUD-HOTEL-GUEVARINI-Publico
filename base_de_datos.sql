@@ -1,5 +1,6 @@
-CREATE DATABASE IF NOT EXISTS crud_hotel_3;
-USE crud_hotel_3;
+CREATE DATABASE IF NOT EXISTS  hotel_guevarini_publico;
+USE hotel_guevarini_publico;
+
 
 
 -- Tablas y registros para usuarios y roles 
@@ -34,9 +35,8 @@ INSERT INTO roles (nombre_rol) VALUES
 /* DATOS DE PRUEBA - USUARIOS
    Las contraseñas generadas aquí son '12345' en texto plano */
 INSERT INTO usuarios (nombre_completo, correo, password, id_rol) VALUES
-('Emir', 'dsm23190242.epolito@alumnos.utsv.edu.mx', '12345', 1),
-('Irving', 'dsm23190360.imolina@alumnos.utsv.edu.mx', '12345', 1),
-('Emir Polito', 'emirpolitog@gmail.com', '12345', 2);
+('Admin', 'admin@correo.com', '12345', 1),
+('Cliente', 'cliente@correo.com', '12345', 2);
 
 
 -- Tablas y registros para el CRUD del hotel 
@@ -74,7 +74,6 @@ CREATE TABLE reservaciones (
 
 /* DATOS DE PRUEBA - CLIENTES */
 INSERT INTO clientes (nombre_completo, telefono, estado) VALUES
-('María García', '555-0192', 'Activo'),
 ('Carlos López', '555-3841', 'Activo'),
 ('Ana Martínez', '555-7734', 'Inactivo');
 

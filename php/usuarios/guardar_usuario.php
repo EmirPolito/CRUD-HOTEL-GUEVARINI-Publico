@@ -64,12 +64,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['usuario_id']) && $
         try {
             // Configuración SMTP con Mailtrap
             $mail->isSMTP();
-            $mail->Host = 'sandbox.smtp.mailtrap.io';
+            $mail->Host = 'sandbox.smtp.mailtrap.io'; // O tu servidor SMTP
             $mail->SMTPAuth = true;
-            $mail->Username = '7e5afe727f22b9';
-            $mail->Password = '04c817ebd1c7b3';
+            $mail->Username = 'TU_USUARIO_SMTP'; // REEMPLAZAR
+            $mail->Password = 'TU_PASSWORD_SMTP'; // REEMPLAZAR
             $mail->SMTPSecure = 'tls';
             $mail->Port = 2525;
+
+            // Obtener el protocolo y servidor actuales dinámicamente
+            $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+            $host = $_SERVER['HTTP_HOST'];
+            $base_dir = dirname(dirname(dirname($_SERVER['SCRIPT_NAME'])));
+            $url = $protocol . "://" . $host . $base_dir . "/verificar_email.php?token=" . $token;
 
             $mail->setFrom('noreply@hotel.com', 'Hotel Guevarini');
             $mail->addAddress($correo, $nombre);
@@ -78,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['usuario_id']) && $
             $mail->Body = "
                 Hola $nombre,<br><br>
                 Da clic para verificar tu cuenta:<br>
-                <a href='http://localhost/proyecto-final-crud/CRUD-HOTEL-COPIA/verificar_email.php?token=$token'>
+                <a href='$url'>
                 Verificar cuenta
                 </a><br><br>
                 Si no solicitaste esta cuenta, ignora este mensaje.

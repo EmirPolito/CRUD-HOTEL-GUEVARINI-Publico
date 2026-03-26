@@ -1,6 +1,6 @@
 <div align="center">
-  <h1> Sistema de Gestión de Hotel</h1>
   <h1>HOTEL GUEVARINI</h1>
+  <h1> Sistema de Gestión de Hotel</h1>
   <p>Una solución web integral para la administración eficiente de hoteles y reservaciones.</p>
 
   <!-- Badges -->
@@ -52,52 +52,9 @@ Este **Sistema de Gestión de Hotel (CRUD)** es una aplicación web robusta desa
 
 Sigue estos pasos para desplegar el proyecto en tu entorno de desarrollo local:
 
-### 1. Requisitos Previos
+Para conocer todos los pasos detallados de instalación, desde la preparación de la base de datos hasta la configuración de PHP y SMTP, así como poner en marcha este proyecto de forma exitosa, revisa nuestra:
 
-- Entorno de servidor local habilitado (XAMPP, WAMP, Laragon, MAMP).
-- PHP version >= 7.4
-- MySQL / MariaDB
-- Composer (`composer`) instalado en tu equipo.
-
-### 2. Configuración del Repositorio
-
-1. Aloja los archivos del proyecto dentro del directorio raíz de tu servidor web (e.g., el directorio `htdocs` para XAMPP).
-2. Abre la consola / terminal en la raíz del proyecto y ejecuta el comando para instalar dependencias de backend:
-   ```bash
-   composer install
-   ```
-
-### 3. Implementación de Base de Datos
-
-1. Inicia sesión en tu gestor de base de datos favorito (como phpMyAdmin o DBeaver).
-2. Importa el archivo principal `base_de_datos.sql`. Este script se hará cargo de construir la base `crud_hotel_3`, definir su arquitectura (tablas e integridad referencial) e inyectar el lote de datos iniciales.
-
-### 4. Parámetros de Conexión y SMTP
-
-**Configuración de Base de Datos (`php/conexion.php`)**
-Verifica que las credenciales de la base de datos coincidan con tu entorno local:
-
-```php
-private $host = "tu-host";
-private $username = "tu-usuario";
-private $password = "tu-contraseña";
-private $db_name = "tu-base-de-datos";
-```
-
-**Configuración de Correos (Mailtrap)**
-Para que el envío de correos de verificación y recuperación funcione correctamente, el sistema utiliza **Mailtrap** (entorno de pruebas SMTP). Asegúrate de actualizar las credenciales de SMTP proporcionadas por Mailtrap en los siguientes archivos:
-
-- `php/auth/procesar_registro.php`
-- `php/auth/enviar_recuperacion.php`
-- `php/auth/reenviar_verificacion.php`
-
-### 5. Lanzamiento del Sistema
-
-Por último, abre tu navegador web y dirígete a la ruta local del proyecto. Ejemplo:
-
-```text
-http://localhost/proyecto-crud-hotel-guevarini/CRUD-HOTEL-GUEVARINI-Publico/login.php
-```
+👉 **[Guía Completa de Configuración y Despliegue](CONFIGURACION.md)**
 
 ---
 
@@ -105,11 +62,10 @@ http://localhost/proyecto-crud-hotel-guevarini/CRUD-HOTEL-GUEVARINI-Publico/logi
 
 Tras importar la base de datos, el sistema se abastecerá con un juego de credenciales semilla listas para evaluar el sistema en sus dos perfiles. La contraseña genérica asignada para pruebas es `12345`.
 
-| Rol Asignado            | Correo Electrónico de Acceso              | Contraseña |
-| :---------------------- | :---------------------------------------- | :--------- |
-| 🛡️ **Administrador**    | `dsm23190242.epolito@alumnos.utsv.edu.mx` | `12345`    |
-| 🛡️ **Administrador**    | `dsm23190360.imolina@alumnos.utsv.edu.mx` | `12345`    |
-| 👤 **Cliente Genérico** | `emirpolitog@gmail.com`                   | `12345`    |
+| Rol Asignado      | Correo Electrónico de Acceso | Contraseña |
+| :---------------- | :--------------------------- | :--------- |
+| **Administrador** | `admin@correo.com`           | `12345`    |
+| **Cliente**       | `cliente@correo.com`         | `12345`    |
 
 ---
 
@@ -131,7 +87,13 @@ CRUD-HOTEL-GUEVARINI-Publico/
 
 ---
 
-## 👨‍💻 Acerca de los Desarrolladores
+## 📜 Licencia
+
+Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archivo [LICENSE](LICENSE).
+
+---
+
+## 👨‍💻 Desarrolladores
 
 Este proyecto fue estructurado y desarrollado como entrega e implementación final del Sistema de Gestión Hotelera por:
 

@@ -4,11 +4,11 @@
 class Conexion
 {
     // Variables privadas, ya que solo se usan dentro de la clase
-    private $host = "localhost";
-    private $db_name = "crud_hotel_3";
-    private $username = "root";
-    private $password = "1234";
-    public $conn; // Variable donde se almacenará la conexión
+    private $host = "tu-host";
+    private $db_name = "tu-base-de-datos";
+    private $username = "tu-usuario";
+    private $password = "tu-contraseña";
+    public $conn;
 
 
     // Método que se encarga de crear y devolver la conexión. PDO para comunicarse con la base de datos
