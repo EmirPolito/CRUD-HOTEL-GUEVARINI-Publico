@@ -18,7 +18,7 @@
 ## Sobre el Proyecto
 
 Este **Sistema de Gestión de Hotel (CRUD)** es una aplicación web robusta desarrollada bajo los estándares de **PHP** y bases de datos relacionales en **MySQL**. Está diseñado para simplificar y digitalizar los procesos administrativos dentro de un entorno hotelero, permitiendo un control estricto sobre los usuarios, el registro de clientes, el inventario de habitaciones y el ciclo completo de las reservaciones.
-
+https://www.mintlify.com/EmirPolito/CRUD-HOTEL-GUEVARINI-Publico
 ---
 
 ## ✨ Características Principales
